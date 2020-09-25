@@ -1,9 +1,12 @@
 package com.mycompany.app.myapp.vo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class ClienteVO {
 
@@ -11,6 +14,13 @@ public class ClienteVO {
     @Valid
     @JsonProperty("nome")
     private String nome;
+
+    @NotNull()
+    @JsonProperty("saldo")
+    private BigDecimal saldo;
+
+    @JsonProperty("historico-movimentação")
+    List<BigDecimal> historicoSaldo = new ArrayList<>();
 
     public String getNome() {
         return nome;
@@ -20,22 +30,29 @@ public class ClienteVO {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public BigDecimal getSaldo() {
+        return saldo;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setSaldo(BigDecimal saldo) {
+        this.saldo = saldo;
     }
 
-    @NotBlank
-    @JsonProperty(value = "cpf")
-    private String cpf;
+    public List<BigDecimal> getHistoricoSaldo() {
+        return historicoSaldo;
+    }
 
-    public ClienteVO(
-        @NotEmpty @Valid String nome, @NotBlank String cpf) {
+    public void setHistoricoSaldo(List<BigDecimal> historicoSaldo) {
+        this.historicoSaldo = historicoSaldo;
+    }
+
+
+
+
+    public ClienteVO(String nome, BigDecimal saldo, List<BigDecimal> historicoSaldo) {
         this.nome = nome;
-        this.cpf = cpf;
+        this.saldo = saldo;
+        this.historicoSaldo = historicoSaldo;
     }
 
 

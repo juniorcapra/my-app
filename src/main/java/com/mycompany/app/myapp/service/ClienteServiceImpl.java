@@ -8,17 +8,14 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 @Component
-public class ClienteServices {
+public class ClienteServiceImpl implements ClienteService {
 
     @Autowired
     ClienteRepository repository;
 
-    public ClienteServices() {
-
-    }
+    public ClienteServiceImpl() {}
 
     public Cliente create(Cliente cliente) {
         Optional<Cliente> clienteOptional = repository.findByCpf(cliente.getCpf());
