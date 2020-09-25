@@ -61,7 +61,7 @@ public class ClienteController {
     }
 
     @GetMapping()
-    public ResponseEntity getAllClients() {
+    public ResponseEntity clientes() {
         List<Cliente> response = service.findAll();
         return ResponseEntity.ok(response);
     }
@@ -72,7 +72,7 @@ public class ClienteController {
         @ApiResponse(code = 422, message = "Resource not found.")
     })
     @GetMapping("/{cpf}")
-    public ResponseEntity getProcessingContractsByCnpj(@PathVariable("cpf") String cpf)
+    public ResponseEntity clienteByCnpj(@PathVariable("cpf") String cpf)
         throws Exception {
 
         try {
