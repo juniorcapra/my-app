@@ -47,8 +47,6 @@ public class ClienteVO {
     }
 
 
-
-
     public ClienteVO(String nome, BigDecimal saldo, List<BigDecimal> historicoSaldo) {
         this.nome = nome;
         this.saldo = saldo;
