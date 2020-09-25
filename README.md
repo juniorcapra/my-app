@@ -1,6 +1,6 @@
 # my-app
 
-API Rest com Spring Boot, Spring Data,Java 11 e Banco de Dados temos
+API Rest com Spring Boot, Spring Data,Java 8 e Banco de Dados temos
 o H2 que é um banco em memória.
 Este API tem como finalidade a criação de clientes e a realização
 de transações bancárias.
